@@ -135,32 +135,32 @@ Run the notebooks **in order**:
 
 | Column | Type | Description |
 |---|---|---|
-| `YEAR` | int | Flight year |
-| `MONTH` | int | Month number (1–12) |
-| `DAY_OF_WEEK` | int | Day code (1=Monday, 7=Sunday) |
-| `OP_UNIQUE_CARRIER` | str | Airline IATA code (e.g. `AA`, `DL`, `UA`) |
-| `ORIGIN` | str | Origin airport IATA code (e.g. `DFW`, `LAX`) |
-| `ORIGIN_CITY_NAME` | str | Origin city and state (e.g. `Dallas/Fort Worth, TX`) |
-| `DEST` | str | Destination airport IATA code |
-| `DEST_CITY_NAME` | str | Destination city and state |
-| `CRS_DEP_TIME` | int | Scheduled departure time in HHMM format (e.g. `0600` = 6:00 AM) |
-| `DEP_DELAY` | float | Departure delay in minutes; negative = early departure |
-| `DEP_DEL15` | float | Binary flag: 1 if delayed 15+ minutes, 0 otherwise |
-| `DISTANCE` | float | Flight distance in miles |
-| `CARRIER_DELAY` | float | Minutes of delay attributed to the airline (e.g. maintenance, crew) — **populated only when `DEP_DEL15 = 1`** |
-| `WEATHER_DELAY` | float | Minutes of delay attributed to weather conditions — **populated only when `DEP_DEL15 = 1`** |
-| `NAS_DELAY` | float | Minutes of delay attributed to the National Airspace System (ATC, airport operations) — **populated only when `DEP_DEL15 = 1`** |
-| `SECURITY_DELAY` | float | Minutes of delay attributed to security issues — **populated only when `DEP_DEL15 = 1`** |
-| `LATE_AIRCRAFT_DELAY` | float | Minutes of delay caused by a late-arriving aircraft on a prior flight — **populated only when `DEP_DEL15 = 1`** |
+| `YEAR` | int64 | Flight year |
+| `MONTH` | int64 | Month number (1–12) |
+| `DAY_OF_WEEK` | int64 | Day code (1=Monday, 7=Sunday) |
+| `OP_UNIQUE_CARRIER` | object | Airline IATA code (e.g. `AA`, `DL`, `UA`) |
+| `ORIGIN` | object | Origin airport IATA code (e.g. `DFW`, `LAX`) |
+| `ORIGIN_CITY_NAME` | object | Origin city and state (e.g. `Dallas/Fort Worth, TX`) |
+| `DEST` | object | Destination airport IATA code |
+| `DEST_CITY_NAME` | object | Destination city and state |
+| `CRS_DEP_TIME` | int64 | Scheduled departure time in HHMM format (e.g. `0600` = 6:00 AM) |
+| `DEP_DELAY` | float64 | Departure delay in minutes; negative = early departure |
+| `DEP_DEL15` | float64 | Binary flag: 1 if delayed 15+ minutes, 0 otherwise |
+| `DISTANCE` | float64 | Flight distance in miles |
+| `CARRIER_DELAY` | float64 | Minutes of delay attributed to the airline (e.g. maintenance, crew) — **populated only when `DEP_DEL15 = 1`** |
+| `WEATHER_DELAY` | float64 | Minutes of delay attributed to weather conditions — **populated only when `DEP_DEL15 = 1`** |
+| `NAS_DELAY` | float64 | Minutes of delay attributed to the National Airspace System (ATC, airport operations) — **populated only when `DEP_DEL15 = 1`** |
+| `SECURITY_DELAY` | float64 | Minutes of delay attributed to security issues — **populated only when `DEP_DEL15 = 1`** |
+| `LATE_AIRCRAFT_DELAY` | float64 | Minutes of delay caused by a late-arriving aircraft on a prior flight — **populated only when `DEP_DEL15 = 1`** |
 
 ### Decoded Lookup Columns (added in `01_extract.ipynb`)
 
 | Column | Type | Description |
 |---|---|---|
-| `MONTH_NAME` | str | Human-readable month name (e.g. `January`) — decoded from `L_MONTHS.csv` |
-| `DAY` | str | Human-readable day name (e.g. `Monday`) — decoded from `L_WEEKDAYS.csv` |
-| `AIRLINE` | str | Full airline name (e.g. `American Airlines Inc.`) — decoded from `L_UNIQUE_CARRIERS.csv` |
-| `source_file` | str | Name of the source ZIP/folder the row came from (e.g. `jan-2024`) — used for traceability |
+| `MONTH_NAME` | object | Human-readable month name (e.g. `January`) — decoded from `L_MONTHS.csv` |
+| `DAY` | object | Human-readable day name (e.g. `Monday`) — decoded from `L_WEEKDAYS.csv` |
+| `AIRLINE` | object | Full airline name (e.g. `American Airlines Inc.`) — decoded from `L_UNIQUE_CARRIERS.csv` |
+| `source_file` | object | Name of the source ZIP/folder the row came from (e.g. `jan-2024`) — used for traceability |
 
 ### Engineered Features (added in `02_clean.ipynb`)
 
