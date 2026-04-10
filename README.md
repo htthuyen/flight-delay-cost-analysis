@@ -2,7 +2,7 @@
 
 An end-to-end data analytics project analyzing the operational cost of **departure delays** for American Airlines across all 12 months of 2024, using real BTS (Bureau of Transportation Statistics) On-Time Performance data.
 
-> **Dataset scope:** This dataset covers departure delay performance for all scheduled domestic flights. It records departure delay minutes for every flight and delay cause breakdown (carrier, weather, NAS, security, late aircraft) **only for flights delayed 15+ minutes**. Arrival delay, cancellations, and diversions are not included.
+> **Analysis scope:** This project focuses on **departure delay** specifically — departure delay is directly controllable by the airline at the gate and cascades into downstream late aircraft delays, making it the most actionable metric for cost reduction. BTS also tracks arrival performance, but that is out of scope for this analysis.
 
 ---
 
