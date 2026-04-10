@@ -1,0 +1,12 @@
+# Raw data files — too large for GitHub
+data/
+extracted_files/
+unzip_data/
+
+# Python cache
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Mac system files
+.DS_Store
