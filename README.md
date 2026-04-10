@@ -166,13 +166,13 @@ Run the notebooks **in order**:
 
 | Column | Type | Description |
 |---|---|---|
-| `DEP_DELAY_COST` | float | Estimated cost of departure delay: `DEP_DELAY × $100.76`, clipped at 0 |
-| `CARRIER_COST` | float | Estimated cost attributable to carrier delay: `CARRIER_DELAY × $100.76` |
-| `WEATHER_COST` | float | Estimated cost attributable to weather delay: `WEATHER_DELAY × $100.76` |
-| `NAS_COST` | float | Estimated cost attributable to NAS delay: `NAS_DELAY × $100.76` |
-| `SECURITY_COST` | float | Estimated cost attributable to security delay: `SECURITY_DELAY × $100.76` |
-| `LATE_AIRCRAFT_COST` | float | Estimated cost attributable to late aircraft delay: `LATE_AIRCRAFT_DELAY × $100.76` |
-| `TIME_BLOCK` | str | Departure time group based on `CRS_DEP_TIME`: `Morning` (05:00–11:59), `Afternoon` (12:00–17:59), `Night` (18:00–04:59) |
+| `DEP_DELAY_COST` | float64 | Estimated cost of departure delay: `DEP_DELAY × $100.76`, clipped at 0 |
+| `CARRIER_COST` | float64 | Estimated cost attributable to carrier delay: `CARRIER_DELAY × $100.76` |
+| `WEATHER_COST` | float64 | Estimated cost attributable to weather delay: `WEATHER_DELAY × $100.76` |
+| `NAS_COST` | float64 | Estimated cost attributable to NAS delay: `NAS_DELAY × $100.76` |
+| `SECURITY_COST` | float64 | Estimated cost attributable to security delay: `SECURITY_DELAY × $100.76` |
+| `LATE_AIRCRAFT_COST` | float64 | Estimated cost attributable to late aircraft delay: `LATE_AIRCRAFT_DELAY × $100.76` |
+| `TIME_BLOCK` | object | Departure time group based on `CRS_DEP_TIME`: `Morning` (05:00–11:59), `Afternoon` (12:00–17:59), `Night` (18:00–04:59) |
 | `IS_WEEKEND` | bool | `True` if the flight departs on Saturday or Sunday |
 
 > Cost rate source: [U.S. Passenger Carrier Delay Costs — airlines.org](https://www.airlines.org/dataset/u-s-passenger-carrier-delay-costs/) — $100.76 per block minute (2024).
